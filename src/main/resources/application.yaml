@@ -1,0 +1,12 @@
+server:
+    port: 8080
+javax:
+    sql:
+        DataSource:
+            airportDataSource:
+                dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
+                dataSource:
+                    url: jdbc:postgresql://localhost:5432/airport-db
+                    user: docker
+                    password: docker
+                    

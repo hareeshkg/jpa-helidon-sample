@@ -1,0 +1,14 @@
+version: '3'
+services:
+  airport-db:
+    image: library/postgres:latest
+    ports:
+      - "5432:5432"
+    container_name: aiport-db-postgres
+    environment:
+      - POSTGRES_DB=airport-db
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_USER=docker
+    volumes:
+      - ./data:/var/lib/postgresql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
