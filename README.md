@@ -388,7 +388,20 @@ try {
 }
 ```
 
-## Step-6 The final step . Build , Run and Test your project
+## Step-6 Add the entity in persistence-unit
+
+Add the Airport entry in persistence.xml under the persistence-unit
+```
+<persistence-unit name="aptrestPU" transaction-type="JTA">
+.....
+<jta-data-source>airportDataSource</jta-data-source><class>com.hkg.helidon.airport.enitity.Airport</class>
+<properties>
+......
+......
+</persistence-unit>
+```
+
+## Step-7 The final step . Build , Run and Test your project
 Build the project with 
 ```
 maven clean install
