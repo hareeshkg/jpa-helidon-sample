@@ -1,12 +1,16 @@
 # A step by step Tutorial for Helidon MP with JPA
 Now that you are here , I assume you would be knowing that Helidon is a micro-service framework released by Oracle . As of now the framework supports two programming models namely Helidon MP and Helidon SE .
-Image for post
-Comparison between helidon SE and helidon MP
+
+
+
 In this tutorial we are primarily going to look at how to create a Helidon MP microservice with JPA support .
 Helidon MP is an implementation of Microprofile — Java EE’s answer to microservices platform— which is primarily contributed by Eclipse and hence mostly known as Eclipse Microprofile .
+
 Read more about Helidon here https://helidon.io/#/
+
 Let’s look at how to create a project so that we can jump into this new interesting framework .
-##Step 1 — Create a quickstart Helidon application with maven archetype
+
+## Step 1 — Create a quickstart Helidon application with maven archetype
 Use a maven archetype to create the project skeleton. Helidon has released a set of archetypes to make life easy for us . Look at the available quickstart maven archetypes from Helidon here — https://mvnrepository.com/artifact/io.helidon.archetypes
 In our case we are going to set up a project with the archetype helidon-quickstart-mp
 ```
@@ -32,7 +36,7 @@ And we will see the below JSON response
 ```
 {"message":"Hello World!"}
 ```
-##Step 2 — Add dependencies in pom.xml for JPA support
+## Step 2 — Add dependencies in pom.xml for JPA support
 Add the CDI ( context and dependency injection ) dependencies for JPA .
 ```
 <dependency>
@@ -79,7 +83,7 @@ And finally we add the jakarta JPA and JTA libraries to support the CDI librarie
 </dependency>
 ```
 That’s all with the pom.xml !
-##Step -3 Let’s set up a PostgreSQL database ( you can skip this step if you already have a database up and running )
+## Step -3 Let’s set up a PostgreSQL database ( you can skip this step if you already have a database up and running )
 We are going to set up a docker-compose file for starting up a docker container of PostgreSQL .
 Create the docker-compose.yml file in the project root and define the details as given below
 ```
@@ -123,7 +127,7 @@ To start the data base use the docker compose up command
 ```
 docker-compose up 
 ```
-##Step 4 : Configuring Helidon to connect to the Database
+## Step 4 : Configuring Helidon to connect to the Database
 Create persistence.xml configured for postgreSQL under the folder src/resources/META-INF
 
 ```
@@ -170,7 +174,7 @@ javax:
                     user: docker
                     password: docker
 ```
-##Step -5 : Implementing an end-to-end JAX-RS based CRUD service
+## Step -5 : Implementing an end-to-end JAX-RS based CRUD service
 Create the following classes
 
 ```
@@ -380,7 +384,7 @@ try {
 }
 ```
 
-##Step-6 The final step . Build , Run and Test your project
+## Step-6 The final step . Build , Run and Test your project
 Build the project with 
 ```
 maven clean install
